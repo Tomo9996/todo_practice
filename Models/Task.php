@@ -11,6 +11,7 @@ class Task extends Model
     public function create($data)
     {
         // DBに保存
+        
         // このクラスのインスタンスの
         // db_managerプロパティの
         // DbManagerクラスのインスタンス
