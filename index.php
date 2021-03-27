@@ -50,11 +50,9 @@ $tasks =$task->getAll();
                             </form>
                         </li>
                     </ul>
-
                 </nav>
             </div>
         </div>
-
         <div class="row p-3">
         <?php foreach($tasks as $task) :?>
             <div class="col-sm-6 col-md-4 col-lg-3 py-3 py-3">
