@@ -6,7 +6,6 @@
 // データの取得
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
