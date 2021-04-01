@@ -87,6 +87,3 @@ $tasks =$task->getAll();
 
 </html>
 
-
-
-
