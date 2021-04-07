@@ -49,14 +49,17 @@ class Model
     // * findById()を以下に追加する
     public function findById($id)
     {
+        // $idと一致するidをもつレコードを取得
+
         // 準備
         $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
 
-        // 実行
+        // sqlを実行
         $stmt->execute([$id]);
 
+        // 一件だけ取得する
         $task = $stmt->fetch();
-
+        // 戻り値
         return $task;
     }
 
