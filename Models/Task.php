@@ -22,12 +22,34 @@ class Task extends Model
         $stmt->execute($data);
     }
     // * update()を以下に追加する
-    
+    public function update($data)
+    {
+        // sql
+        // 更新したい項目　= title = $title
+        // 更新したい項目　= title = $title, contents = $contents
+        // update テーブル名　set 更新したい項目　where id = $id(どこの);
+
+        // カラム名　= id
+        // カラム名　= id, title, contents
+        // select カラム名　from テーブル名　どこの;
+        // どこの　= id
+        // どこの　= id = $id and title = $title
+
+        $stmt = $this->db_manager->dbh->prepare('UPDATE ' . $this->table . ' SET title = ?, contents = ? WHERE id = ?');
+        // 実行する
+        $stmt->execute($data);　
+    }
 
 
 
     // * (findByTitle()を以下に追加する)
-
+    public function findByTitle($data)
+    {
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE title LIKE ?');
+        $stmt->execute($data);
+        $tasks = $stmt->fetchAll();
+        return $tasks;
+    }
 
 
 
